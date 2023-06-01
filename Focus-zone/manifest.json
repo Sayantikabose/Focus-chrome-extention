@@ -1,0 +1,33 @@
+{
+    "manifest_version": 3,
+    "name": "FocusZone",
+    "version": "1.0.0",
+    "description": "Helps user to focus by blocking distracting websites and videos",
+    "background": {
+        "service_worker": "background.js"
+
+    },
+    "content_scripts": [{
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+    }],
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "128": "logoo.png"
+        }
+    },
+    "permissions": [
+        "webRequest",
+        "webRequestBlocking",
+        "scripting",
+        "activeTab"
+    ],
+    "host_permissions": [
+        "https://*/*",
+        "http://*/*"
+    ],
+    "icons": {
+        "128": "logoo.png"
+    }
+}
